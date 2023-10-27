@@ -6,3 +6,9 @@ data class RegisterData(
     val password: String,
     val confirm_password: String
 )
+
+data class RegisterResponse(
+    val message: String,
+    val refresh: String,
+    val access: String
+)
