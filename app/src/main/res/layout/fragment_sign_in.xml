@@ -41,13 +41,13 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_top" />
 
     <TextView
-        android:id="@+id/repeat_password_text"
+        android:id="@+id/login_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:text="Логин*"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/et_repeat_password"
+        app:layout_constraintStart_toStartOf="@+id/et_login"
         app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
 
     <TextView
@@ -57,11 +57,11 @@
         android:layout_marginTop="16dp"
         android:text="Пароль*"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/et_repeat_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_repeat_password" />
+        app:layout_constraintStart_toStartOf="@+id/et_login"
+        app:layout_constraintTop_toBottomOf="@+id/et_login" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_repeat_password"
+        android:id="@+id/et_login"
         style="@style/EditText"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repeat_password_text" />
+        app:layout_constraintTop_toBottomOf="@+id/login_text" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_password"
@@ -141,7 +141,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_btn_transparent"
-        android:enabled="false"
         android:text="Зарегистрироваться"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -170,8 +169,8 @@
         android:text="*Неверный логин или пароль"
         android:textColor="@android:color/holo_red_dark"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/repeat_password_text"
-        app:layout_constraintStart_toStartOf="@+id/repeat_password_text" />
+        app:layout_constraintBottom_toTopOf="@+id/login_text"
+        app:layout_constraintStart_toStartOf="@+id/login_text" />
 
     <TextView
         android:id="@+id/incorrect_password_msg"
