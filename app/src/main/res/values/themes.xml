@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.NeoQuizApp" parent="Base.Theme.NeoQuizApp" />
+
+    <style name="EditText">
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:textColor">@color/et_text</item>
+        <item name="android:background">@drawable/rounded_et</item>
+    </style>
 </resources>
