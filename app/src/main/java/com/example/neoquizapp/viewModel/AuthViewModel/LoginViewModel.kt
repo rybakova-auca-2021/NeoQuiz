@@ -29,6 +29,10 @@ class LoginViewModel : ViewModel() {
                 response: Response<TokenData>
             ) {
                 if (response.isSuccessful) {
+                    val response = response.body()
+                    if (response != null) {
+                        Utils.access = response.access
+                    }
                     onSuccess.invoke()
                 } else {
                     onError.invoke()

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".view.mainPage.FilterFragment">
+
+
+    <ImageView
+        android:id="@+id/close_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iconamoon_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Фильтр"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/close_btn" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Категория:"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/btn_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="История"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_history"
+        app:layout_constraintStart_toEndOf="@+id/btn_history"
+        app:layout_constraintTop_toTopOf="@+id/btn_history" />
+
+    <ImageView
+        android:id="@+id/btn_literature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_history" />
+
+    <TextView
+        android:id="@+id/literature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Литература"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_literature"
+        app:layout_constraintStart_toEndOf="@+id/btn_literature"
+        app:layout_constraintTop_toTopOf="@+id/btn_literature" />
+
+    <ImageView
+        android:id="@+id/btn_philosophy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_literature" />
+
+    <TextView
+        android:id="@+id/philosophy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Философия"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_philosophy"
+        app:layout_constraintStart_toEndOf="@+id/btn_philosophy"
+        app:layout_constraintTop_toTopOf="@+id/btn_philosophy" />
+
+    <ImageView
+        android:id="@+id/btn_psychology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_philosophy" />
+
+    <TextView
+        android:id="@+id/psychology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Психология"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_psychology"
+        app:layout_constraintStart_toEndOf="@+id/btn_psychology"
+        app:layout_constraintTop_toTopOf="@+id/btn_psychology" />
+
+    <ImageView
+        android:id="@+id/btn_art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_psychology" />
+
+    <TextView
+        android:id="@+id/art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Искусство"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_art"
+        app:layout_constraintStart_toEndOf="@+id/btn_art"
+        app:layout_constraintTop_toTopOf="@+id/btn_art" />
+
+
+    <ImageView
+        android:id="@+id/btn_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_art" />
+
+    <TextView
+        android:id="@+id/music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Музыка"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_music"
+        app:layout_constraintStart_toEndOf="@+id/btn_music"
+        app:layout_constraintTop_toTopOf="@+id/btn_music" />
+
+    <ImageView
+        android:id="@+id/btn_kino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_music" />
+
+    <TextView
+        android:id="@+id/kino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Кино"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_kino"
+        app:layout_constraintStart_toEndOf="@+id/btn_kino"
+        app:layout_constraintTop_toTopOf="@+id/btn_kino" />
+
+    <TextView
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunito_semibold"
+        android:minHeight="48dp"
+        android:text="@string/reset"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_kino" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_btn"
+        android:enabled="false"
+        android:text="Применить"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_reset" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

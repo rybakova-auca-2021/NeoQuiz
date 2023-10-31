@@ -5,56 +5,77 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.neoquizapp.R
+import com.example.neoquizapp.adapters.ArticleAdapter
+import com.example.neoquizapp.adapters.ArticleMainAdapter
+import com.example.neoquizapp.adapters.QuizMainAdapter
+import com.example.neoquizapp.databinding.FragmentMainPageBinding
+import com.example.neoquizapp.model.mainModel.Article
+import com.example.neoquizapp.viewModel.MainViewModel.GetArticlesViewModel
+import com.example.neoquizapp.viewModel.MainViewModel.GetQuizzesViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MainPageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainPageFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentMainPageBinding
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerViewQuiz: RecyclerView
+    private lateinit var adapter: ArticleMainAdapter
+    private lateinit var quizAdapter: QuizMainAdapter
+    private val viewModel: GetArticlesViewModel by viewModels()
+    private val quizViewModel: GetQuizzesViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_page, container, false)
+        binding = FragmentMainPageBinding.inflate(inflater, container, false)
+        recyclerView = binding.recyclerViewArticles
+        recyclerViewQuiz = binding.recyclerViewQuiz
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MainPageFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MainPageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        adapter = ArticleMainAdapter(emptyList())
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.adapter = adapter
+
+        quizAdapter = QuizMainAdapter(emptyList())
+        recyclerViewQuiz.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerViewQuiz.adapter = quizAdapter
+
+        getArticles()
+        getQuizzes()
+        setupNavigation()
+    }
+
+    private fun setupNavigation() {
+        binding.arrowArticles.setOnClickListener {
+            findNavController().navigate(R.id.allArticlesFragment)
+        }
+        adapter.setOnItemClickListener(object : ArticleMainAdapter.OnItemClickListener {
+            override fun onItemClick(article: Article) {
+                val bundle = Bundle()
+                bundle.putInt("id", article.id)
+                findNavController().navigate(R.id.detailArticleFragment, bundle)
             }
+        })
+    }
+
+    private fun getArticles() {
+        viewModel.getAllArticles() {
+            article -> adapter.updateData(article)
+        }
+    }
+
+    private fun getQuizzes() {
+        quizViewModel.getQuizzes {
+                article -> quizAdapter.updateData(article)
+        }
     }
 }
