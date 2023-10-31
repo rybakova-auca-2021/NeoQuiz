@@ -38,5 +38,5 @@ interface AuthInterface {
     fun verifyCode(@Body request: VerifyCodeData): Call<TokenData>
 
     @GET("users/profile/")
-    fun getProfile(): Call<ProfileData>
+    fun getProfile(@Header("Authorization") token: String): Call<ProfileData>
 }

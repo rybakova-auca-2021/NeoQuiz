@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_allArticlesFragment"
             app:destination="@id/allArticlesFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/codeVerificationFragment"
@@ -103,5 +106,14 @@
         <action
             android:id="@+id/action_filterFragment_to_allArticlesFragment"
             app:destination="@id/allArticlesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.neoquizapp.view.mainPage.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
 </navigation>

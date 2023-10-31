@@ -2,7 +2,7 @@ package com.example.neoquizapp.model
 
 data class ProfileData(
     val user: UserInfo,
-    val completed_quizzes: QuizProfile
+    val completed_quizzes: List<QuizProfile>
 )
 
 data class UserInfo(

@@ -58,6 +58,9 @@ class MainPageFragment : Fragment() {
         binding.arrowArticles.setOnClickListener {
             findNavController().navigate(R.id.allArticlesFragment)
         }
+        binding.imageView7.setOnClickListener {
+            findNavController().navigate(R.id.action_mainPageFragment_to_profileFragment)
+        }
         adapter.setOnItemClickListener(object : ArticleMainAdapter.OnItemClickListener {
             override fun onItemClick(article: Article) {
                 val bundle = Bundle()

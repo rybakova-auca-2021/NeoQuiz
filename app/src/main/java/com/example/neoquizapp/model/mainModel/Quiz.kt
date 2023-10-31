@@ -10,5 +10,5 @@ data class Quiz(
     val id: Int,
     val title: String,
     val question_count: String,
-    val is_completed: String
+    val is_completed: Boolean
 )
