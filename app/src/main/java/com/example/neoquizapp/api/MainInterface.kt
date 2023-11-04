@@ -1,5 +1,6 @@
 package com.example.neoquizapp.api
 
+import com.example.neoquizapp.model.mainModel.Answers
 import com.example.neoquizapp.model.mainModel.Article
 import com.example.neoquizapp.model.mainModel.ArticleResult
 import com.example.neoquizapp.model.mainModel.Question
@@ -31,8 +32,8 @@ interface MainInterface {
     fun getQuiz(@Header("Authorization") token: String, @Path("id") id: Int): Call<QuizDetail>
 
     @GET("content/quizzes/{id}/questions/")
-    fun getQuizQuestions(@Path("id") id: Int): Call<Question>
+    fun getQuizQuestions(@Header("Authorization") token: String, @Path("id") id: Int): Call<List<Question>>
 
     @POST("content/quizzes/{id}/submit/")
-    fun submitQuiz(@Body request: QuizSubmission, @Path("id") id: Int): Call<QuizSubmissionResponse>
+    fun submitQuiz(@Header("Authorization") token: String, @Body request: QuizSubmission, @Path("id") id: Int): Call<QuizSubmissionResponse>
 }

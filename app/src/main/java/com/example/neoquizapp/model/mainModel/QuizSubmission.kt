@@ -1,11 +1,11 @@
 package com.example.neoquizapp.model.mainModel
 
 data class QuizSubmission(
-    val answers: Answers
+    val answers: Map<String, Int>
 )
 
 data class Answers(
-    val questionIdToAnswerId: Map<Int, Int>
+    val answers: Map<String, Int>
 )
 
 data class QuizSubmissionResponse(
