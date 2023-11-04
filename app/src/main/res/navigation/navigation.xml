@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_allQuizzesFragment"
+            app:destination="@id/allQuizzesFragment" />
     </fragment>
     <fragment
         android:id="@+id/codeVerificationFragment"
@@ -114,6 +117,48 @@
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allQuizzesFragment"
+        android:name="com.example.neoquizapp.view.mainPage.AllQuizzesFragment"
+        android:label="fragment_all_quizzes"
+        tools:layout="@layout/fragment_all_quizzes" >
+        <action
+            android:id="@+id/action_allQuizzesFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+        <action
+            android:id="@+id/action_allQuizzesFragment_to_detailQuizFragment"
+            app:destination="@id/detailQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailQuizFragment"
+        android:name="com.example.neoquizapp.view.mainPage.DetailQuizFragment"
+        android:label="fragment_detail_quiz"
+        tools:layout="@layout/fragment_detail_quiz" >
+        <action
+            android:id="@+id/action_detailQuizFragment_to_allQuizzesFragment"
+            app:destination="@id/allQuizzesFragment" />
+        <action
+            android:id="@+id/action_detailQuizFragment_to_questionsPageFragment"
+            app:destination="@id/questionsPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsPageFragment"
+        android:name="com.example.neoquizapp.view.mainPage.QuestionsPageFragment"
+        android:label="fragment_questions_page"
+        tools:layout="@layout/fragment_questions_page" >
+        <action
+            android:id="@+id/action_questionsPageFragment_to_finishedQuizFragment"
+            app:destination="@id/finishedQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishedQuizFragment"
+        android:name="com.example.neoquizapp.view.mainPage.FinishedQuizFragment"
+        android:label="fragment_finished_quiz"
+        tools:layout="@layout/fragment_finished_quiz" >
+        <action
+            android:id="@+id/action_finishedQuizFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
     </fragment>
 </navigation>

@@ -5,26 +5,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neoquizapp.R
-import com.example.neoquizapp.databinding.CardQuizMainBinding
+import com.example.neoquizapp.databinding.CardQuizBinding
 import com.example.neoquizapp.model.mainModel.Quiz
+import com.github.islamkhsh.CardSliderAdapter
 
-class QuizMainAdapter(private var quizzes: List<Quiz>) :
-    RecyclerView.Adapter<QuizMainAdapter.QuizViewHolder>() {
-
+class SliderAdapter(private var quizzes: List<Quiz>) :
+    CardSliderAdapter<SliderAdapter.SliderViewHolder>() {
     private val cardBackgrounds = arrayOf(
-        R.drawable.card1,
-        R.drawable.card2,
-        R.drawable.card3,
-        R.drawable.card4,
-        R.drawable.card5,
-        R.drawable.card6,
-        R.drawable.card7,
-        R.drawable.card8
+        R.color.color_1,
+        R.color.color_2,
+        R.color.color_3,
+        R.color.color_4,
+        R.color.color_5
     )
 
     private var itemClickListener: OnItemClickListener? = null
 
-    fun setOnItemClickListener(listener: QuizMainAdapter.OnItemClickListener) {
+    fun setOnItemClickListener(listener: SliderAdapter.OnItemClickListener) {
         itemClickListener = listener
     }
 
@@ -32,14 +29,13 @@ class QuizMainAdapter(private var quizzes: List<Quiz>) :
         fun onItemClick(quiz: Quiz)
     }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SliderViewHolder {
+        val binding = CardQuizBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuizViewHolder {
-        val binding = CardQuizMainBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-
-        return QuizViewHolder(binding)
+        return SliderViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: QuizViewHolder, position: Int) {
+    override fun bindVH(holder: SliderViewHolder, position: Int) {
         val quiz = quizzes[position]
         holder.bind(quiz)
     }
@@ -59,16 +55,26 @@ class QuizMainAdapter(private var quizzes: List<Quiz>) :
         diffResult.dispatchUpdatesTo(this)
     }
 
-    inner class QuizViewHolder(private val binding: CardQuizMainBinding) :
+    inner class SliderViewHolder(private val binding: CardQuizBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val clickedItem = quizzes[position]
+                    itemClickListener?.onItemClick(clickedItem)
+                }
+            }
+        }
 
         fun bind(quiz: Quiz) {
             val position = cardBackgrounds.indices.random()
             binding.layout.setBackgroundResource(cardBackgrounds[position])
 
             if (quiz.title != null) {
-                binding.articleCategory.text = quiz.title
-                binding.numQuestions.text = "${quiz.question_count} вопросов"
+                binding.quizTitle.text = quiz.title
+                binding.quizQuestion.text = "${quiz.question_count} вопросов"
                 when (quiz.title) {
                     "История" -> {
                         binding.quizImage.setImageResource(R.drawable.history_quiz_img)

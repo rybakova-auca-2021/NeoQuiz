@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="380dp"
+    android:layout_height="550dp"
+    app:cardCornerRadius="10dp"
+    android:layout_gravity="center"
+    app:cardMaxElevation="20dp"
+    app:cardElevation="20dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/quiz_image"
+            android:layout_width="208dp"
+            android:layout_height="207dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/history_quiz_img" />
+
+        <TextView
+            android:id="@+id/quiz_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="@+id/quiz_image"
+            app:layout_constraintStart_toStartOf="@+id/quiz_image"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_image"
+            tools:text="История" />
+
+        <TextView
+            android:id="@+id/quiz_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/quiz_title"
+            app:layout_constraintStart_toStartOf="@+id/quiz_title"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_title"
+            tools:text="10 вопросов" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+

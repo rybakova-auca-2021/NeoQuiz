@@ -5,4 +5,9 @@
     <color name="background">#FFF9F5</color>
     <color name="et_text">#8F8F8F</color>
     <color name="error">#A31B1B</color>
+    <color name="color_1">#FFE0A3</color>
+    <color name="color_2">#CCFFF6</color>
+    <color name="color_3">#FFCCFD</color>
+    <color name="color_4">#ADD3FF</color>
+    <color name="color_5">#D0CCFF</color>
 </resources>

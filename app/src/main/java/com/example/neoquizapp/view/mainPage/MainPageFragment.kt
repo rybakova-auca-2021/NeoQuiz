@@ -68,6 +68,9 @@ class MainPageFragment : Fragment() {
                 findNavController().navigate(R.id.detailArticleFragment, bundle)
             }
         })
+        binding.arrowQuizzes.setOnClickListener {
+            findNavController().navigate(R.id.action_mainPageFragment_to_allQuizzesFragment)
+        }
     }
 
     private fun getArticles() {
