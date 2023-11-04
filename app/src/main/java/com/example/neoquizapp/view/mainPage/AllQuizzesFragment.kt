@@ -53,6 +53,14 @@ class AllQuizzesFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_allQuizzesFragment_to_mainPageFragment)
         }
+        binding.registerBtn.setOnClickListener {
+            val selectedQuizId = adapter.getSelectedQuizId()
+            if (selectedQuizId != null) {
+                val bundle = Bundle()
+                bundle.putInt("id", selectedQuizId)
+                findNavController().navigate(R.id.questionsPageFragment, bundle)
+            }
+        }
     }
 
     private fun getQuizzes() {

@@ -1,6 +1,7 @@
 package com.example.neoquizapp.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,8 @@ import com.github.islamkhsh.CardSliderAdapter
 
 class SliderAdapter(private var quizzes: List<Quiz>) :
     CardSliderAdapter<SliderAdapter.SliderViewHolder>() {
+    private var selectedQuizId: Int? = null
+
     private val cardBackgrounds = arrayOf(
         R.color.color_1,
         R.color.color_2,
@@ -38,6 +41,12 @@ class SliderAdapter(private var quizzes: List<Quiz>) :
     override fun bindVH(holder: SliderViewHolder, position: Int) {
         val quiz = quizzes[position]
         holder.bind(quiz)
+
+        selectedQuizId = quiz.id
+    }
+
+    fun getSelectedQuizId(): Int? {
+        return selectedQuizId
     }
 
     override fun getItemCount(): Int {
@@ -75,6 +84,9 @@ class SliderAdapter(private var quizzes: List<Quiz>) :
             if (quiz.title != null) {
                 binding.quizTitle.text = quiz.title
                 binding.quizQuestion.text = "${quiz.question_count} вопросов"
+                if (quiz.is_completed) {
+                    binding.imgPassed?.visibility = View.VISIBLE
+                }
                 when (quiz.title) {
                     "История" -> {
                         binding.quizImage.setImageResource(R.drawable.history_quiz_img)
