@@ -64,6 +64,7 @@ class CodeVerificationFragment : Fragment() {
         }
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun verifyCode(username: String) {
         val code = binding.pinView.text.toString()
         viewModel.verifyCode(
@@ -74,6 +75,7 @@ class CodeVerificationFragment : Fragment() {
             },
             onError = {
                 binding.errorMsg.visibility = View.VISIBLE
+                binding.pinView.setLineColor(R.color.error)
             }
         )
     }
