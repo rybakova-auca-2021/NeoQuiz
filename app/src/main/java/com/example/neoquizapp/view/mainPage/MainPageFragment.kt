@@ -16,6 +16,7 @@ import com.example.neoquizapp.adapters.ArticleMainAdapter
 import com.example.neoquizapp.adapters.QuizMainAdapter
 import com.example.neoquizapp.databinding.FragmentMainPageBinding
 import com.example.neoquizapp.model.mainModel.Article
+import com.example.neoquizapp.model.mainModel.Quiz
 import com.example.neoquizapp.viewModel.MainViewModel.GetArticlesViewModel
 import com.example.neoquizapp.viewModel.MainViewModel.GetQuizzesViewModel
 
@@ -66,6 +67,13 @@ class MainPageFragment : Fragment() {
                 val bundle = Bundle()
                 bundle.putInt("id", article.id)
                 findNavController().navigate(R.id.detailArticleFragment, bundle)
+            }
+        })
+        quizAdapter.setOnItemClickListener(object : QuizMainAdapter.OnItemClickListener {
+            override fun onItemClick(quiz: Quiz) {
+                val bundle = Bundle()
+                bundle.putInt("id", quiz.id)
+                findNavController().navigate(R.id.detailQuizFragment, bundle)
             }
         })
         binding.arrowQuizzes.setOnClickListener {

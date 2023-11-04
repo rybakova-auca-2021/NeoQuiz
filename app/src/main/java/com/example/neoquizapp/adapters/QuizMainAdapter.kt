@@ -61,6 +61,15 @@ class QuizMainAdapter(private var quizzes: List<Quiz>) :
 
     inner class QuizViewHolder(private val binding: CardQuizMainBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val clickedItem = quizzes[position]
+                    itemClickListener?.onItemClick(clickedItem)
+                }
+            }
+        }
 
         fun bind(quiz: Quiz) {
             val position = cardBackgrounds.indices.random()
