@@ -42,8 +42,10 @@ class AllArticlesFragment : Fragment() {
         val category = arguments?.getInt("category", -1)
         if (category != null) {
             getFilterArticles(category)
+            binding.filterSelectedImg.visibility = View.VISIBLE
         } else {
             getArticles()
+            binding.filterSelectedImg.visibility = View.GONE
         }
         setupNavigation()
         search()

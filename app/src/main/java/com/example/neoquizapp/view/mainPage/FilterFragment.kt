@@ -14,6 +14,8 @@ import com.example.neoquizapp.viewModel.MainViewModel.FilterViewModel
 class FilterFragment : Fragment() {
     private lateinit var binding: FragmentFilterBinding
     private var filter: Int? = null
+    private val buttonStates = mutableMapOf<Int, Boolean>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,6 +61,7 @@ class FilterFragment : Fragment() {
                 filter = category
                 button.setImageResource(R.drawable.state_true)
                 updateAddButtonState()
+                buttonStates[category] = true
             }
         }
     }
@@ -73,9 +76,13 @@ class FilterFragment : Fragment() {
             Pair(binding.btnMusic, 6),
             Pair(binding.btnKino, 7)
         )
-        filter = null
-        buttons.forEach { (button) ->
-            button.setBackgroundResource(R.drawable.frame_35)
+        buttons.forEach { (button, category) ->
+            if (buttonStates[category] == true) {
+                filter = null
+                button.setImageResource(R.drawable.frame_35)
+                updateAddButtonState()
+                buttonStates[category] = false
+            }
         }
     }
 
