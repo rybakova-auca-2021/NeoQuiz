@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@color/background"
     tools:context=".view.mainPage.ProfileFragment">
 
@@ -13,6 +12,7 @@
         android:id="@+id/imageView8"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:src="@drawable/text_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +36,8 @@
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/maki_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/text_profile"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,18 +47,20 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="46dp"
         android:fontFamily="@font/nunito_semibold"
-        tools:text="Камила"
         android:textColor="@color/black"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        tools:text="Камила" />
 
     <TextView
         android:id="@+id/passed_quizzes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:fontFamily="@font/nunito_semibold"
         android:text="Пройденные квизы:"
@@ -102,6 +106,8 @@
         android:id="@+id/logout_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
