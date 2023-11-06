@@ -17,7 +17,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neoquizapp.R
 import com.example.neoquizapp.adapters.PassedQuizzesAdapter
+import com.example.neoquizapp.adapters.SliderAdapter
 import com.example.neoquizapp.databinding.FragmentProfileBinding
+import com.example.neoquizapp.model.QuizProfile
+import com.example.neoquizapp.model.mainModel.Quiz
 import com.example.neoquizapp.utils.Utils
 import com.example.neoquizapp.viewModel.MainViewModel.GetProfileViewModel
 
@@ -53,6 +56,13 @@ class ProfileFragment : Fragment() {
         binding.logoutBtn.setOnClickListener {
             showDialog()
         }
+        adapter.setOnItemClickListener(object : PassedQuizzesAdapter.OnItemClickListener {
+            override fun onItemClick(quiz: QuizProfile) {
+                val bundle = Bundle()
+                bundle.putInt("id", quiz.id)
+                findNavController().navigate(R.id.questionsPageFragment, bundle)
+            }
+        })
     }
 
     private fun getProfile() {

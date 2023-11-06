@@ -25,6 +25,17 @@ class PassedQuizzesAdapter(private var quizzes: List<QuizProfile>) :
         R.drawable.card8
     )
 
+    private var itemClickListener: OnItemClickListener? = null
+
+    fun setOnItemClickListener(listener: PassedQuizzesAdapter.OnItemClickListener) {
+        itemClickListener = listener
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(quiz: QuizProfile)
+    }
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuizViewHolder {
         val binding = CardPassedQuizBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return QuizViewHolder(binding)
@@ -47,6 +58,15 @@ class PassedQuizzesAdapter(private var quizzes: List<QuizProfile>) :
 
     inner class QuizViewHolder(private val binding: CardPassedQuizBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val clickedItem = quizzes[position]
+                    itemClickListener?.onItemClick(clickedItem)
+                }
+            }
+        }
 
         fun bind(quiz: QuizProfile) {
             val position = cardBackgrounds.indices.random()

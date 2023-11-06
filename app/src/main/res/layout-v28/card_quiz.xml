@@ -2,17 +2,16 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="380dp"
-    android:layout_height="550dp"
+    android:id="@+id/layout"
+    android:layout_width="321dp"
+    android:layout_height="500dp"
     app:cardCornerRadius="10dp"
     android:layout_gravity="center"
-    app:cardMaxElevation="20dp"
-    app:cardElevation="20dp"
-    app:cardPreventCornerOverlap="false"
-    app:cardUseCompatPadding="true">
+    app:cardElevation="10dp"
+    app:cardMaxElevation="10dp"
+    app:cardPreventCornerOverlap="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -30,10 +29,10 @@
             android:id="@+id/quiz_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/nunito_semibold"
             android:textColor="@color/black"
-            android:textSize="32sp"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="@+id/quiz_image"
             app:layout_constraintStart_toStartOf="@+id/quiz_image"
             app:layout_constraintTop_toBottomOf="@+id/quiz_image"
@@ -44,11 +43,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/quiz_title"
             app:layout_constraintStart_toStartOf="@+id/quiz_title"
             app:layout_constraintTop_toBottomOf="@+id/quiz_title"
             tools:text="10 вопросов" />
+
+        <ImageView
+            android:id="@+id/img_passed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
 
