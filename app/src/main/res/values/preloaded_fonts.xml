@@ -4,5 +4,7 @@
         <item>@font/nunito</item>
         <item>@font/nunito_bold</item>
         <item>@font/nunito_semibold</item>
+        <item>@font/yanone_kaffeesatz</item>
+        <item>@font/yanone_kaffeesatz_bold</item>
     </array>
 </resources>
