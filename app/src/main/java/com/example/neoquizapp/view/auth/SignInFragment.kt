@@ -94,5 +94,10 @@ class SignInFragment : Fragment() {
         val newTransformationMethod = if (isPasswordVisible) PasswordTransformationMethod.getInstance() else HideReturnsTransformationMethod.getInstance()
         binding.etPassword.transformationMethod = newTransformationMethod
         binding.etPassword.setSelection(binding.etPassword.text?.length ?: 0)
+        if (isPasswordVisible) {
+            binding.imageView5.setImageResource(R.drawable.icons)
+        } else {
+            binding.imageView5.setImageResource(R.drawable.icon_opened_eye)
+        }
     }
 }

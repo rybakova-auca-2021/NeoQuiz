@@ -104,6 +104,12 @@ class RegistrationFragment : Fragment() {
         val newTransformationMethod = if (isPasswordVisible) PasswordTransformationMethod.getInstance() else HideReturnsTransformationMethod.getInstance()
         binding.etPassword.transformationMethod = newTransformationMethod
         binding.etPassword.setSelection(binding.etPassword.text?.length ?: 0)
+
+        if (isPasswordVisible) {
+            binding.imageView2.setImageResource(R.drawable.icons)
+        } else {
+            binding.imageView2.setImageResource(R.drawable.icon_opened_eye)
+        }
     }
 
     private fun togglePasswordRepeatVisibility() {
@@ -111,5 +117,11 @@ class RegistrationFragment : Fragment() {
         val newTransformationMethod2 = if (isPasswordVisible2) PasswordTransformationMethod.getInstance() else HideReturnsTransformationMethod.getInstance()
         binding.etRepeatPassword.transformationMethod = newTransformationMethod2
         binding.etRepeatPassword.setSelection(binding.etRepeatPassword.text?.length ?: 0)
+
+        if (isPasswordVisible2) {
+            binding.imageView3.setImageResource(R.drawable.icons)
+        } else {
+            binding.imageView3.setImageResource(R.drawable.icon_opened_eye)
+        }
     }
 }
