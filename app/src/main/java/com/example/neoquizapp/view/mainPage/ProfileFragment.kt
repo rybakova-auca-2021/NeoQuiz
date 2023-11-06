@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.neoquizapp.R
 import com.example.neoquizapp.adapters.PassedQuizzesAdapter
 import com.example.neoquizapp.databinding.FragmentProfileBinding
+import com.example.neoquizapp.utils.Utils
 import com.example.neoquizapp.viewModel.MainViewModel.GetProfileViewModel
 
 class ProfileFragment : Fragment() {
@@ -66,6 +68,8 @@ class ProfileFragment : Fragment() {
         val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_logout, null)
         val myDialog = Dialog(requireContext())
         myDialog.setContentView(dialogView)
+        val closeBtn = myDialog.findViewById<TextView>(R.id.btn_clode)
+        val logoutBtn = myDialog.findViewById<TextView>(R.id.btn_logout)
 
         val margin = 20
         val density = resources.displayMetrics.density
@@ -79,10 +83,12 @@ class ProfileFragment : Fragment() {
         myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         myDialog.show()
 
-        binding.btnBack.setOnClickListener {
+        closeBtn.setOnClickListener {
             myDialog.dismiss()
         }
-        binding.logoutBtn.setOnClickListener {
+        logoutBtn.setOnClickListener {
+            myDialog.dismiss()
+            Utils.access = null
             findNavController().navigate(R.id.signInFragment)
         }
 

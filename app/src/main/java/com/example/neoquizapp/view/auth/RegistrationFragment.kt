@@ -90,6 +90,11 @@ class RegistrationFragment : Fragment() {
                 if (name.isEmpty()) {
                     binding.nameValid.visibility = View.VISIBLE
                 }
+                if (password != passwordRepeat) {
+                    binding.etPassword.setBackgroundResource(R.drawable.rounded_et_error)
+                    binding.etRepeatPassword.setBackgroundResource(R.drawable.rounded_et_error)
+                    binding.passwordsValid.visibility = View.VISIBLE
+                }
             }
         )
     }

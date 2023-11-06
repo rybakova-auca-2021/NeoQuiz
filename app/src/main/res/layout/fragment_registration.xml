@@ -170,15 +170,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        android:enabled="false"
         android:background="@drawable/rounded_btn"
+        android:enabled="false"
         android:text="Зарегистрироваться"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_repeat_password" />
+        app:layout_constraintTop_toBottomOf="@+id/passwords_valid" />
 
     <TextView
         android:id="@+id/name_valid"
@@ -195,10 +195,10 @@
         android:id="@+id/passwords_valid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:text="*Пароли не совпадают"
         android:textColor="@android:color/holo_red_dark"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="@+id/et_login"
-        app:layout_constraintTop_toBottomOf="@+id/et_login" />
+        app:layout_constraintTop_toBottomOf="@+id/et_repeat_password" />
 </androidx.constraintlayout.widget.ConstraintLayout>

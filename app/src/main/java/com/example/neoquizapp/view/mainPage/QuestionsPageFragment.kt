@@ -47,7 +47,7 @@ class QuestionsPageFragment : Fragment() {
                 if (id != null) {
                     displayQuestion(currentQuestionIndex)
                 }
-                progressBar.progress = currentQuestionIndex
+                progressBar.progress = currentQuestionIndex + 1
                 binding.numOfQuestion.text = "Вопрос ${currentQuestionIndex + 1} из 10"
             } else {
                 if (id != null) {
