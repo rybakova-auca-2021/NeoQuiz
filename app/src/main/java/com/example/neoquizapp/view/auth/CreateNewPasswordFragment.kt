@@ -128,11 +128,6 @@ class CreateNewPasswordFragment : Fragment() {
         val myDialog = Dialog(requireContext())
         myDialog.setContentView(dialogView)
 
-        val layoutParams = WindowManager.LayoutParams()
-        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT // Width of the dialog window
-        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT // Height of the dialog window
-        myDialog.window?.attributes = layoutParams
-
         myDialog.setCancelable(true)
         myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         myDialog.show()

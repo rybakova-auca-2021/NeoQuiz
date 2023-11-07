@@ -78,20 +78,13 @@ class ProfileFragment : Fragment() {
         val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_logout, null)
         val myDialog = Dialog(requireContext())
         myDialog.setContentView(dialogView)
-        val closeBtn = myDialog.findViewById<TextView>(R.id.btn_clode)
-        val logoutBtn = myDialog.findViewById<TextView>(R.id.btn_logout)
-
-        val margin = 20
-        val density = resources.displayMetrics.density
-
-        val layoutParams = WindowManager.LayoutParams()
-        layoutParams.width = (resources.displayMetrics.widthPixels - 2 * margin * density).toInt()
-        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
-        myDialog.window?.attributes = layoutParams
 
         myDialog.setCancelable(true)
         myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         myDialog.show()
+
+        val closeBtn = myDialog.findViewById<TextView>(R.id.btn_clode)
+        val logoutBtn = myDialog.findViewById<TextView>(R.id.btn_logout)
 
         closeBtn.setOnClickListener {
             myDialog.dismiss()
