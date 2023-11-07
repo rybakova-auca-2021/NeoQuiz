@@ -50,13 +50,13 @@
         android:id="@+id/btn_first"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/rounded_btn_transparent"
-        tools:text="Oтвет 1"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question_text" />
+        app:layout_constraintTop_toBottomOf="@+id/question_text"
+        tools:text="Oтвет 1" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_second"
@@ -99,6 +99,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_btn"
         android:enabled="true"
         android:text="Следующий квиз"

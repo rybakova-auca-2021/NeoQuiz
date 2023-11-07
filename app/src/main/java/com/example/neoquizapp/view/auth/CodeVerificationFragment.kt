@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -75,7 +76,8 @@ class CodeVerificationFragment : Fragment() {
             },
             onError = {
                 binding.errorMsg.visibility = View.VISIBLE
-                binding.pinView.setLineColor(R.color.error)
+                val errorColor = ContextCompat.getColor(requireContext(), R.color.error)
+                binding.pinView.setLineColor(errorColor)
             }
         )
     }
@@ -115,7 +117,7 @@ class CodeVerificationFragment : Fragment() {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
                 timeRemaining = millisUntilFinished
-                binding.btnSendAgain.text = "Отправить код повторно (${millisUntilFinished / 1000}s)"
+                binding.btnSendAgain.text = "Отправить код повторно 0:${millisUntilFinished / 1000}"
             }
 
             @SuppressLint("ResourceAsColor")

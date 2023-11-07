@@ -1,14 +1,17 @@
 package com.example.neoquizapp.adapters
 
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neoquizapp.R
 import com.example.neoquizapp.databinding.CardQuizBinding
 import com.example.neoquizapp.model.mainModel.Quiz
 import com.github.islamkhsh.CardSliderAdapter
+import com.google.android.material.card.MaterialCardView
 
 class SliderAdapter(private var quizzes: List<Quiz>) :
     CardSliderAdapter<SliderAdapter.SliderViewHolder>() {
@@ -79,7 +82,18 @@ class SliderAdapter(private var quizzes: List<Quiz>) :
 
         fun bind(quiz: Quiz) {
             val position = cardBackgrounds.indices.random()
-            binding.layout.setBackgroundResource(cardBackgrounds[position])
+            val color = cardBackgrounds[position]
+
+            val shadowDrawable = GradientDrawable()
+            shadowDrawable.setColor(ContextCompat.getColor(binding.root.context, color))
+            shadowDrawable.cornerRadius =  10f
+
+            val cardView = binding.layout
+            cardView.background = shadowDrawable
+
+            cardView.cardElevation = 30f
+            cardView.preventCornerOverlap = true
+            cardView.radius = 10f
 
             if (quiz.title != null) {
                 binding.quizTitle.text = quiz.title
