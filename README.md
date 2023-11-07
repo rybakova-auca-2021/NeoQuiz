@@ -17,14 +17,14 @@ Join us on this educational journey as we bring Quizum to life. Let's learn, gro
 
 
 ## Pictures
-![Auth Page](imagesForReadme/Auth_Screenshot.png)
-![Main Page](imagesForReadme/Main_Page.png)
-![All Quizzes Page](imagesForReadme/all_quizzes.png)
-![Detail Quiz Page](imagesForReadme/detail_quiz.png)
-![Questions Page](imagesForReadme/questions_page.png)
-![All Articles Page](imagesForReadme/All_Articles.png)
-![Filter Articles Page](imagesForReadme/filter_page.png)
-![Profile Page](imagesForReadme/profile_page.png)
+<img src="imagesForReadme/Auth_Screenshot.png" width="300">
+<img src="imagesForReadme/Main_Page.png" width="300">
+<img src="imagesForReadme/all_quizzes.png" width="300">
+<img src="imagesForReadme/detail_quiz.png" width="300">
+<img src="imagesForReadme/questions_page.png" width="300">
+<img src="imagesForReadme/All_Articles.png" width="300">
+<img src="imagesForReadme/filter_page.png" width="300">
+<img src="imagesForReadme/profile_page.png" width="300">
 
 
 ## License
